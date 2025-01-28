@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "ninja",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "third-party/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "windows-base",
+            "displayName": "Windows Base",
+            "inherits": "ninja",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+        }
+
+    ]
+}
